@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Baskara Tambachiya Natarajan V — Backend Engineer</title>
+<style>
+@property --ang{syntax:'<angle>';inherits:false;initial-value:0deg}
+:root{--paper:#f3eee3;--ink:#121212;--card:#fffaf0;--mut:#55524b;--a:#ff4d2e;--b:#2f3bff;--c:#ffd93d;--sh:6px 6px 0 var(--ink);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#0f0f12;--ink:#f3eee3;--card:#18181d;--mut:#a5a299;--a:#ff6a4d;--b:#8a94ff}}
+:root[data-theme="dark"]{--paper:#0f0f12;--ink:#f3eee3;--card:#18181d;--mut:#a5a299;--a:#ff6a4d;--b:#8a94ff}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;min-height:100%;background:var(--paper);color:var(--ink);font:17px/1.6 ui-sans-serif,"Helvetica Neue",Arial,sans-serif;overflow-x:hidden;counter-reset:sec}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:50;opacity:.09;mix-blend-mode:overlay;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit}
+.bar{display:none}
+@supports (animation-timeline:scroll()){.bar{display:block;position:fixed;top:env(safe-area-inset-top,0px);left:0;width:100%;height:6px;z-index:60;background:linear-gradient(90deg,var(--a),var(--c),var(--b));transform-origin:0 50%;animation:grow linear both;animation-timeline:scroll()}}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes spin{to{--ang:360deg}}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes bob{50%{transform:translateY(-10px) rotate(var(--r,0deg))}}
+.wrap{width:min(1100px,100% - 40px);margin-inline:auto}
+.tgl{position:fixed;right:14px;bottom:calc(14px + env(safe-area-inset-bottom,0px));z-index:70;border:3px solid var(--ink);background:var(--c);color:#121212;font:700 13px ui-monospace,Menlo,monospace;padding:10px 14px;border-radius:99px;cursor:pointer;box-shadow:4px 4px 0 var(--ink)}
+.tgl:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--ink)}
+/* hero */
+header{padding:56px 0 30px;position:relative}
+.kick{font:700 13px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:10px;align-items:center;margin-bottom:18px}
+.kick i{width:44px;height:4px;background:var(--a);display:block}
+h1{margin:0;font-size:clamp(46px,12.5vw,128px);line-height:.9;font-weight:900;letter-spacing:-.05em;text-transform:uppercase}
+h1 span{display:block}
+h1 .o{color:transparent;-webkit-text-stroke:2px var(--ink)}
+h1 .h{display:inline-block;background:var(--c);color:#121212;padding:0 .12em;transform:rotate(-2deg);box-shadow:var(--sh)}
+.hero-row{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:end;margin-top:32px}
+.lead{max-width:56ch;font-size:19px;margin:0}
+.badge{--r:12deg;width:124px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;text-align:center;font:800 12px/1.2 ui-monospace,Menlo,monospace;text-transform:uppercase;background:conic-gradient(from var(--ang),var(--a),var(--c),var(--b),var(--a));animation:spin 6s linear infinite,bob 4s ease-in-out infinite;position:relative;transform:rotate(12deg)}
+.badge::before{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--paper)}
+.badge b{position:relative;color:var(--ink)}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.btn{border:3px solid var(--ink);padding:10px 18px;font-weight:800;text-decoration:none;background:var(--card);box-shadow:var(--sh);transition:transform .15s,box-shadow .15s;text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+.btn:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink)}
+.btn.p{background:var(--a);color:#121212}
+/* marquee */
+.mq{border-block:4px solid var(--ink);background:var(--ink);color:var(--paper);overflow:hidden;white-space:nowrap;transform:rotate(-1.2deg);margin:36px -10px}
+.mq div{display:inline-flex;gap:34px;padding:12px 17px;animation:slide 26s linear infinite;font:800 20px ui-monospace,Menlo,monospace;text-transform:uppercase}
+.mq em{font-style:normal;color:var(--c)}
+/* sections */
+section{padding:56px 0}
+h2{margin:0 0 28px;font-size:clamp(30px,6vw,54px);letter-spacing:-.03em;text-transform:uppercase;line-height:1;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+h2::before{counter-increment:sec;content:"0" counter(sec);font:700 15px ui-monospace,Menlo,monospace;background:var(--ink);color:var(--paper);padding:4px 9px;transform:translateY(-6px) rotate(-4deg)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px}
+.stat{background:var(--card);border:3px solid var(--ink);box-shadow:var(--sh);padding:18px;transform:rotate(var(--r))}
+.stat:nth-child(odd){--r:-1.6deg}.stat:nth-child(even){--r:1.4deg}
+.stat b{display:block;font-size:clamp(40px,7vw,60px);line-height:1;font-weight:900;letter-spacing:-.04em;background:linear-gradient(100deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat span{font-size:14px;color:var(--mut)}
+/* timeline */
+.tl{display:grid;gap:26px}
+.job{display:grid;grid-template-columns:150px 1fr;gap:20px;position:relative}
+.yr{font:800 15px ui-monospace,Menlo,monospace;padding-top:6px}
+.yr small{display:block;color:var(--mut);font-weight:500}
+.jb{background:var(--card);border:3px solid var(--ink);box-shadow:var(--sh);padding:22px;position:relative}
+.jb::before{content:"";position:absolute;left:-25px;top:12px;width:18px;height:18px;background:var(--a);border:3px solid var(--ink);border-radius:50%}
+.jb h3{margin:0 0 10px;font-size:22px}
+.jb ul{margin:0;padding-left:20px}.jb li{margin-bottom:8px}
+/* repos */
+.repos{container-type:inline-size}
+.rg{display:grid;gap:26px;grid-template-columns:1fr}
+@container (min-width:620px){.rg{grid-template-columns:repeat(2,1fr)}}
+@container (min-width:940px){.rg{grid-template-columns:repeat(3,1fr)}}
+.repo{display:flex;flex-direction:column;text-decoration:none;background:var(--card);border:3px solid var(--ink);box-shadow:var(--sh);transition:transform .25s cubic-bezier(.2,.8,.2,1);transform-style:preserve-3d}
+.repo:hover{transform:perspective(800px) rotateX(5deg) rotateY(-7deg) translateY(-8px)}
+.cov{height:120px;border-bottom:3px solid var(--ink);display:grid;place-items:center;font:900 44px ui-monospace,Menlo,monospace;color:#121212}
+.repo:nth-child(1) .cov{background:repeating-linear-gradient(45deg,var(--c) 0 14px,#fff0a8 14px 28px)}
+.repo:nth-child(2) .cov{background:radial-gradient(circle at 30% 30%,var(--a) 0 22%,transparent 23%),radial-gradient(circle at 75% 70%,var(--b) 0 28%,transparent 29%),var(--c)}
+.repo:nth-child(3) .cov{background:conic-gradient(from 90deg at 50% 50%,var(--b),var(--a),var(--c),var(--b))}
+.repo:nth-child(4) .cov{background:linear-gradient(var(--ink) 2px,transparent 2px) 0 0/22px 22px,linear-gradient(90deg,var(--ink) 2px,transparent 2px) 0 0/22px 22px,var(--c)}
+.repo:nth-child(5) .cov{background:linear-gradient(135deg,var(--a) 50%,var(--b) 50%)}
+.repo:nth-child(6) .cov{background:radial-gradient(var(--ink) 20%,transparent 21%) 0 0/16px 16px,var(--a)}
+.rb{padding:16px 18px 18px}
+.rb h3{margin:0 0 6px;font-size:18px;font-family:ui-monospace,Menlo,monospace;word-break:break-word}
+.rb p{margin:0 0 12px;color:var(--mut);font-size:15px}
+.tag{font:700 12px ui-monospace,Menlo,monospace;background:var(--ink);color:var(--paper);padding:3px 8px}
+/* lab */
+.lab{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.tile{min-height:190px;border:3px solid var(--ink);box-shadow:var(--sh);background:var(--card);padding:16px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.tile small{font:700 12px ui-monospace,Menlo,monospace;text-transform:uppercase;position:relative;z-index:2}
+.t-glass{background:radial-gradient(circle at 20% 25%,var(--a) 0 18%,transparent 19%),radial-gradient(circle at 80% 70%,var(--b) 0 24%,transparent 25%),var(--c)}
+.t-glass::after{content:"backdrop-filter";position:absolute;inset:38px 18px 18px;display:grid;place-items:center;font:800 15px ui-monospace,Menlo,monospace;color:#121212;background:rgba(255,255,255,.28);backdrop-filter:blur(10px) saturate(1.4);-webkit-backdrop-filter:blur(10px) saturate(1.4);border:1px solid rgba(255,255,255,.6);border-radius:14px}
+.t-grad{border:5px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,conic-gradient(from var(--ang),var(--a),var(--b),var(--c),var(--a)) border-box;animation:spin 4s linear infinite;box-shadow:none}
+.t-clip{background:var(--b);color:#fff}
+.t-clip i{position:absolute;inset:40px 30px 20px;background:var(--c);clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);transition:clip-path .5s}
+.t-clip:hover i{clip-path:polygon(50% 100%,100% 62%,82% 0,18% 0,0 62%)}
+.t-has{transition:background .3s}
+.t-has:has(input:checked){background:var(--c)}
+.t-has label{display:flex;gap:10px;align-items:center;font-weight:800;cursor:pointer}
+.t-has input{accent-color:var(--a);width:22px;height:22px}
+.t-has span{font-size:14px;color:var(--mut)}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.chip{border:2px solid var(--ink);padding:5px 12px;font:700 13px ui-monospace,Menlo,monospace;background:var(--card);border-radius:99px;transition:background .2s,transform .2s}
+.chip:hover{background:var(--c);color:#121212;transform:rotate(-3deg) scale(1.06)}
+/* skills */
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.sk div{border:3px solid var(--ink);padding:18px;background:var(--card);box-shadow:var(--sh)}
+.sk h3{margin:0 0 10px;font:800 13px ui-monospace,Menlo,monospace;text-transform:uppercase;color:var(--a)}
+.sk p{margin:0;font-weight:600}
+footer{background:var(--ink);color:var(--paper);padding:56px 0 calc(70px + env(safe-area-inset-bottom,0px));margin-top:40px}
+footer h2::before{background:var(--c);color:#121212}
+footer a{font-size:clamp(20px,4vw,34px);font-weight:900;text-decoration:none;border-bottom:4px solid var(--a);margin-right:22px;display:inline-block;margin-bottom:12px;word-break:break-all}
+footer a:hover{background:var(--a);color:#121212}
+@media (max-width:640px){.hero-row,.job{grid-template-columns:1fr}.badge{display:none}.jb::before{display:none}h1 .o{-webkit-text-stroke:1.5px var(--ink)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="bar"></div>
+<button class="tgl" id="tgl" aria-label="Toggle theme">◐ THEME</button>
+
+<header class="wrap">
+<div class="kick"><i></i>Portfolio · Backend &amp; Frontend</div>
+<h1><span>Baskara</span><span class="o">Tambachiya</span><span><b class="h">Natarajan V</b></span></h1>
+<div class="hero-row">
+<div>
+<p class="lead">Backend engineer with 5+ years of experience building fast, fault-tolerant systems, plus a soft spot for crisp interfaces and loud typography. I care about idempotency, data integrity and things that don't fall over at scale.</p>
+<div class="btns">
+<a class="btn p" href="mailto:baskara.v@outlook.com">Say hello</a>
+<a class="btn" href="https://github.com/BaskaraTambachiyaNatarajan" target="_blank" rel="noopener">GitHub</a>
+<a class="btn" href="https://www.linkedin.com/in/baskara-natarajan/" target="_blank" rel="noopener">LinkedIn</a>
+</div>
+</div>
+<div class="badge"><b>Open<br>to new<br>roles</b></div>
+</div>
+</header>
+
+<div class="mq" aria-hidden="true"><div><span>Java</span><em>✦</em><span>Python</span><em>✦</em><span>SQL</span><em>✦</em><span>REST APIs</span><em>✦</em><span>Distributed systems</span><em>✦</em><span>DuckDB</span><em>✦</em><span>HTML &amp; CSS</span><em>✦</em><span>Java</span><em>✦</em><span>Python</span><em>✦</em><span>SQL</span><em>✦</em><span>REST APIs</span><em>✦</em><span>Distributed systems</span><em>✦</em><span>DuckDB</span><em>✦</em><span>HTML &amp; CSS</span><em>✦</em></div></div>
+
+<main class="wrap">
+<section>
+<h2>Numbers</h2>
+<div class="stats">
+<div class="stat"><b>≈290×</b><span>faster ETL: ~3 days down to ~15 minutes</span></div>
+<div class="stat"><b>97%</b><span>fewer file reads in a hot workflow (90 → 3)</span></div>
+<div class="stat"><b>2×</b><span>less upstream write traffic via record diffing</span></div>
+<div class="stat"><b>25%</b><span>less workload for a sales team after automation</span></div>
+</div>
+</section>
+
+<section>
+<h2>Experience</h2>
+<div class="tl">
+<div class="job"><div class="yr">DEC 2021 → NOW<small>Software Engineer</small></div>
+<div class="jb"><h3>Backend Engineer</h3><ul>
+<li>Rebuilt a multi-day relational ETL pipeline as an in-process DuckDB workflow: ~3 days to ~15 minutes (≈290×) with no extra memory budget.</li>
+<li>Built a closed-loop AI document-review pipeline with an LLM agent SDK. It is fully idempotent and auto-approves or flags documents for a human.</li>
+<li>Led a storage migration from a single datacenter to a domain-based distributed model, enabling region-aware data residency.</li>
+<li>Designed an anti-piracy online license validation system using OAuth 2.0 and PGP encryption to stop tampering and reuse.</li>
+<li>Cut redundant file I/O by 97% and built a record-diff subsystem that halved upstream writes.</li>
+<li>Shipped a self-serve trial-extension REST API (20% less support load) and an inventory system for multi-country license sales.</li>
+</ul></div></div>
+<div class="job"><div class="yr">OCT 2019 → DEC 2021<small>SDET</small></div>
+<div class="jb"><h3>Test Engineering &amp; Tooling</h3><ul>
+<li>Led a testing team of 2 and built internal developer tools: an impact analyzer, a broken-link finder and a jar analyzer.</li>
+<li>Wrote Selenium regression suites and an API testing tool for validating third-party integrations.</li>
+</ul></div></div>
+</div>
+</section>
+
+<section class="repos">
+<h2>On GitHub</h2>
+<div class="rg">
+<a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/Python-Projects" target="_blank" rel="noopener"><div class="cov">{py}</div><div class="rb"><h3>Python-Projects</h3><p>A collection of Python projects and experiments.</p><span class="tag">Python</span></div></a>
+<a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/Shopping_Site-Django-Ongoing" target="_blank" rel="noopener"><div class="cov">🛒</div><div class="rb"><h3>Shopping_Site-Django</h3><p>A Django shopping site, still in progress.</p><span class="tag">Python · Django</span></div></a>
+<a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/CRM" target="_blank" rel="noopener"><div class="cov">CRM</div><div class="rb"><h3>CRM</h3><p>A customer relationship management app.</p><span class="tag">Python</span></div></a>
+<a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/DS_Algo" target="_blank" rel="noopener"><div class="cov">O(n)</div><div class="rb"><h3>DS_Algo</h3><p>Data structures and algorithms practice.</p><span class="tag">Python</span></div></a>
+<a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/Report" target="_blank" rel="noopener"><div class="cov">▤</div><div class="rb"><h3>Report</h3><p>A reporting project using Django and pandas.</p><span class="tag">Python · Django · pandas</span></div></a>
+<a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/Streamlit" target="_blank" rel="noopener"><div class="cov">≋</div><div class="rb"><h3>Streamlit</h3><p>Interactive data apps built with Streamlit.</p><span class="tag">Python · Streamlit</span></div></a>
+</div>
+</section>
+
+<section>
+<h2>CSS lab</h2>
+<p style="max-width:60ch;margin:0 0 26px">Every tile and trick on this page is hand-written CSS with a sliver of JavaScript for the theme toggle. Poke around.</p>
+<div class="lab">
+<div class="tile t-glass"><small>Glassmorphism</small></div>
+<div class="tile t-grad"><small>@property gradient border</small><b style="font-size:26px;line-height:1.1">Animated custom property</b></div>
+<div class="tile t-clip"><small>clip-path morph · hover me</small><i></i></div>
+<div class="tile t-has"><small>:has() selector</small><label><input type="checkbox"> Tick me</label><span>The parent restyles itself, no JS.</span></div>
+</div>
+<div class="chips">
+<span class="chip">Grid</span><span class="chip">Flexbox</span><span class="chip">Container queries</span><span class="chip">Custom properties</span><span class="chip">@property</span><span class="chip">:has()</span><span class="chip">clip-path</span><span class="chip">backdrop-filter</span><span class="chip">Conic gradients</span><span class="chip">Blend modes</span><span class="chip">Scroll-driven animation</span><span class="chip">background-clip: text</span><span class="chip">3D transforms</span><span class="chip">clamp() fluid type</span><span class="chip">Counters</span><span class="chip">Dark mode tokens</span><span class="chip">Safe-area insets</span><span class="chip">Reduced motion</span><span class="chip">SVG data URIs</span>
+</div>
+</section>
+
+<section>
+<h2>Toolbox</h2>
+<div class="sk">
+<div><h3>Languages</h3><p>Java · Python · SQL · HTML · CSS · JavaScript</p></div>
+<div><h3>Backend</h3><p>REST API design · Spring Boot · OAuth 2.0 · PGP · Event-driven design · Idempotency patterns</p></div>
+<div><h3>Data</h3><p>MySQL · PostgreSQL · DuckDB · pandas · Streamlit</p></div>
+<div><h3>AI &amp; Automation</h3><p>LLM agents · Files API · Prompt engineering · Selenium</p></div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="wrap">
+<h2>Let's build</h2>
+<a href="mailto:baskara.v@outlook.com">baskara.v@outlook.com</a>
+<a href="https://www.linkedin.com/in/baskara-natarajan/" target="_blank" rel="noopener">LinkedIn ↗</a>
+<a href="https://github.com/BaskaraTambachiyaNatarajan" target="_blank" rel="noopener">GitHub ↗</a>
+</div>
+</footer>
+
+<script>
+(function(){
+var r=document.documentElement,k='pf-theme';
+try{var s=localStorage.getItem(k);if(s)r.setAttribute('data-theme',s)}catch(e){}
+document.getElementById('tgl').addEventListener('click',function(){
+var d=r.getAttribute('data-theme');
+var cur=d||(matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light');
+var n=cur==='dark'?'light':'dark';
+r.setAttribute('data-theme',n);
+try{localStorage.setItem(k,n)}catch(e){}
+});
+})();
+</script>
+</body>
+</html>
