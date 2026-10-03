@@ -80,24 +80,6 @@ h2::before{counter-increment:sec;content:"0" counter(sec);font:700 15px ui-monos
 .rb h3{margin:0 0 6px;font-size:18px;font-family:ui-monospace,Menlo,monospace;word-break:break-word}
 .rb p{margin:0 0 12px;color:var(--mut);font-size:15px}
 .tag{font:700 12px ui-monospace,Menlo,monospace;background:var(--ink);color:var(--paper);padding:3px 8px}
-/* lab */
-.lab{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-.tile{min-height:190px;border:3px solid var(--ink);box-shadow:var(--sh);background:var(--card);padding:16px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
-.tile small{font:700 12px ui-monospace,Menlo,monospace;text-transform:uppercase;position:relative;z-index:2}
-.t-glass{background:radial-gradient(circle at 20% 25%,var(--a) 0 18%,transparent 19%),radial-gradient(circle at 80% 70%,var(--b) 0 24%,transparent 25%),var(--c)}
-.t-glass::after{content:"backdrop-filter";position:absolute;inset:38px 18px 18px;display:grid;place-items:center;font:800 15px ui-monospace,Menlo,monospace;color:#121212;background:rgba(255,255,255,.28);backdrop-filter:blur(10px) saturate(1.4);-webkit-backdrop-filter:blur(10px) saturate(1.4);border:1px solid rgba(255,255,255,.6);border-radius:14px}
-.t-grad{border:5px solid transparent;background:linear-gradient(var(--card),var(--card)) padding-box,conic-gradient(from var(--ang),var(--a),var(--b),var(--c),var(--a)) border-box;animation:spin 4s linear infinite;box-shadow:none}
-.t-clip{background:var(--b);color:#fff}
-.t-clip i{position:absolute;inset:40px 30px 20px;background:var(--c);clip-path:polygon(50% 0,100% 38%,82% 100%,18% 100%,0 38%);transition:clip-path .5s}
-.t-clip:hover i{clip-path:polygon(50% 100%,100% 62%,82% 0,18% 0,0 62%)}
-.t-has{transition:background .3s}
-.t-has:has(input:checked){background:var(--c)}
-.t-has label{display:flex;gap:10px;align-items:center;font-weight:800;cursor:pointer}
-.t-has input{accent-color:var(--a);width:22px;height:22px}
-.t-has span{font-size:14px;color:var(--mut)}
-.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
-.chip{border:2px solid var(--ink);padding:5px 12px;font:700 13px ui-monospace,Menlo,monospace;background:var(--card);border-radius:99px;transition:background .2s,transform .2s}
-.chip:hover{background:var(--c);color:#121212;transform:rotate(-3deg) scale(1.06)}
 /* skills */
 .sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
 .sk div{border:3px solid var(--ink);padding:18px;background:var(--card);box-shadow:var(--sh)}
@@ -116,11 +98,11 @@ footer a:hover{background:var(--a);color:#121212}
 <button class="tgl" id="tgl" aria-label="Toggle theme">◐ THEME</button>
 
 <header class="wrap">
-<div class="kick"><i></i>Portfolio · Backend &amp; Frontend</div>
+<div class="kick"><i></i>Portfolio · Backend Engineer</div>
 <h1><span>Baskara</span><span class="o">Tambachiya</span><span><b class="h">Natarajan V</b></span></h1>
 <div class="hero-row">
 <div>
-<p class="lead">Backend engineer with 5+ years of experience building fast, fault-tolerant systems, plus a soft spot for crisp interfaces and loud typography. I care about idempotency, data integrity and things that don't fall over at scale.</p>
+<p class="lead">Backend engineer with 7+ years of experience building fast, fault-tolerant systems, plus a soft spot for crisp interfaces and loud typography. I care about idempotency, data integrity and things that don't fall over at scale.</p>
 <div class="btns">
 <a class="btn p" href="mailto:baskara.v@outlook.com">Say hello</a>
 <a class="btn" href="https://github.com/BaskaraTambachiyaNatarajan" target="_blank" rel="noopener">GitHub</a>
@@ -173,20 +155,6 @@ footer a:hover{background:var(--a);color:#121212}
 <a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/DS_Algo" target="_blank" rel="noopener"><div class="cov">O(n)</div><div class="rb"><h3>DS_Algo</h3><p>Data structures and algorithms practice.</p><span class="tag">Python</span></div></a>
 <a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/Report" target="_blank" rel="noopener"><div class="cov">▤</div><div class="rb"><h3>Report</h3><p>A reporting project using Django and pandas.</p><span class="tag">Python · Django · pandas</span></div></a>
 <a class="repo" href="https://github.com/BaskaraTambachiyaNatarajan/Streamlit" target="_blank" rel="noopener"><div class="cov">≋</div><div class="rb"><h3>Streamlit</h3><p>Interactive data apps built with Streamlit.</p><span class="tag">Python · Streamlit</span></div></a>
-</div>
-</section>
-
-<section>
-<h2>CSS lab</h2>
-<p style="max-width:60ch;margin:0 0 26px">Every tile and trick on this page is hand-written CSS with a sliver of JavaScript for the theme toggle. Poke around.</p>
-<div class="lab">
-<div class="tile t-glass"><small>Glassmorphism</small></div>
-<div class="tile t-grad"><small>@property gradient border</small><b style="font-size:26px;line-height:1.1">Animated custom property</b></div>
-<div class="tile t-clip"><small>clip-path morph · hover me</small><i></i></div>
-<div class="tile t-has"><small>:has() selector</small><label><input type="checkbox"> Tick me</label><span>The parent restyles itself, no JS.</span></div>
-</div>
-<div class="chips">
-<span class="chip">Grid</span><span class="chip">Flexbox</span><span class="chip">Container queries</span><span class="chip">Custom properties</span><span class="chip">@property</span><span class="chip">:has()</span><span class="chip">clip-path</span><span class="chip">backdrop-filter</span><span class="chip">Conic gradients</span><span class="chip">Blend modes</span><span class="chip">Scroll-driven animation</span><span class="chip">background-clip: text</span><span class="chip">3D transforms</span><span class="chip">clamp() fluid type</span><span class="chip">Counters</span><span class="chip">Dark mode tokens</span><span class="chip">Safe-area insets</span><span class="chip">Reduced motion</span><span class="chip">SVG data URIs</span>
 </div>
 </section>
 
