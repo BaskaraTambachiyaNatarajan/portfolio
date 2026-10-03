@@ -1,3 +1,4 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -98,11 +99,11 @@ footer a:hover{background:var(--a);color:#121212}
 <button class="tgl" id="tgl" aria-label="Toggle theme">◐ THEME</button>
 
 <header class="wrap">
-<div class="kick"><i></i>Portfolio · Backend Engineer</div>
+<div class="kick"><i></i>Java · Spring Boot · Distributed Systems</div>
 <h1><span>Baskara</span><span class="o">Tambachiya</span><span><b class="h">Natarajan V</b></span></h1>
 <div class="hero-row">
 <div>
-<p class="lead">Backend engineer with 7+ years of experience building fast, fault-tolerant systems, plus a soft spot for crisp interfaces and loud typography. I care about idempotency, data integrity and things that don't fall over at scale.</p>
+<p class="lead">Java backend engineer with 7+ years of experience building high-throughput, fault-tolerant systems. I care about idempotency, data integrity and services that keep working at scale. I use AI and LLM tooling in my daily engineering work, and I'm especially drawn to payments infrastructure.</p>
 <div class="btns">
 <a class="btn p" href="mailto:baskara.v@outlook.com">Say hello</a>
 <a class="btn" href="https://github.com/BaskaraTambachiyaNatarajan" target="_blank" rel="noopener">GitHub</a>
@@ -113,7 +114,7 @@ footer a:hover{background:var(--a);color:#121212}
 </div>
 </header>
 
-<div class="mq" aria-hidden="true"><div><span>Java</span><em>✦</em><span>Python</span><em>✦</em><span>SQL</span><em>✦</em><span>REST APIs</span><em>✦</em><span>Distributed systems</span><em>✦</em><span>DuckDB</span><em>✦</em><span>HTML &amp; CSS</span><em>✦</em><span>Java</span><em>✦</em><span>Python</span><em>✦</em><span>SQL</span><em>✦</em><span>REST APIs</span><em>✦</em><span>Distributed systems</span><em>✦</em><span>DuckDB</span><em>✦</em><span>HTML &amp; CSS</span><em>✦</em></div></div>
+<div class="mq" aria-hidden="true"><div><span>Java</span><em>✦</em><span>Spring Boot</span><em>✦</em><span>REST APIs</span><em>✦</em><span>Distributed systems</span><em>✦</em><span>Idempotency</span><em>✦</em><span>OAuth 2.0</span><em>✦</em><span>DuckDB</span><em>✦</em><span>LLM agents</span><em>✦</em><span>Java</span><em>✦</em><span>Spring Boot</span><em>✦</em><span>REST APIs</span><em>✦</em><span>Distributed systems</span><em>✦</em><span>Idempotency</span><em>✦</em><span>OAuth 2.0</span><em>✦</em><span>DuckDB</span><em>✦</em><span>LLM agents</span><em>✦</em></div></div>
 
 <main class="wrap">
 <section>
@@ -127,15 +128,24 @@ footer a:hover{background:var(--a);color:#121212}
 </section>
 
 <section>
+<h2>What I bring</h2>
+<div class="sk">
+<div><h3>Correctness first</h3><p>Idempotent pipelines, tamper-proof license validation with OAuth 2.0 and PGP, and diff-based syncing so the same change is never applied twice.</p></div>
+<div><h3>Built for scale</h3><p>Moved storage to a domain-based distributed model, cut a 3-day ETL to 15 minutes, and halved upstream write traffic.</p></div>
+<div><h3>AI-assisted engineering</h3><p>Built an agent-based document review pipeline end to end, and use LLM tools daily for coding, review and debugging.</p></div>
+</div>
+</section>
+
+<section>
 <h2>Experience</h2>
 <div class="tl">
 <div class="job"><div class="yr">DEC 2021 → NOW<small>Software Engineer</small></div>
 <div class="jb"><h3>Backend Engineer</h3><ul>
-<li>Rebuilt a multi-day relational ETL pipeline as an in-process DuckDB workflow: ~3 days to ~15 minutes (≈290×) with no extra memory budget.</li>
+<li>Led a storage migration from a single datacenter to a domain-based distributed model, enabling region-aware data residency and better read/write locality.</li>
 <li>Built a closed-loop AI document-review pipeline with an LLM agent SDK. It is fully idempotent and auto-approves or flags documents for a human.</li>
-<li>Led a storage migration from a single datacenter to a domain-based distributed model, enabling region-aware data residency.</li>
 <li>Designed an anti-piracy online license validation system using OAuth 2.0 and PGP encryption to stop tampering and reuse.</li>
-<li>Cut redundant file I/O by 97% and built a record-diff subsystem that halved upstream writes.</li>
+<li>Rebuilt a multi-day relational ETL pipeline as an in-process DuckDB workflow: ~3 days to ~15 minutes (≈290×) with no extra memory budget.</li>
+<li>Cut redundant file I/O by 97% under peak concurrent load and built a record-diff subsystem that halved upstream writes.</li>
 <li>Shipped a self-serve trial-extension REST API (20% less support load) and an inventory system for multi-country license sales.</li>
 </ul></div></div>
 <div class="job"><div class="yr">OCT 2019 → DEC 2021<small>SDET</small></div>
@@ -161,10 +171,10 @@ footer a:hover{background:var(--a);color:#121212}
 <section>
 <h2>Toolbox</h2>
 <div class="sk">
-<div><h3>Languages</h3><p>Java · Python · SQL · HTML · CSS · JavaScript</p></div>
-<div><h3>Backend</h3><p>REST API design · Spring Boot · OAuth 2.0 · PGP · Event-driven design · Idempotency patterns</p></div>
-<div><h3>Data</h3><p>MySQL · PostgreSQL · DuckDB · pandas · Streamlit</p></div>
-<div><h3>AI &amp; Automation</h3><p>LLM agents · Files API · Prompt engineering · Selenium</p></div>
+<div><h3>Languages</h3><p>Java · Python · SQL</p></div>
+<div><h3>Backend</h3><p>Spring Boot · REST API design · Distributed systems · Event-driven design · Idempotency patterns · OAuth 2.0 · PGP</p></div>
+<div><h3>Data</h3><p>MySQL · PostgreSQL · DuckDB · pandas</p></div>
+<div><h3>AI &amp; Automation</h3><p>LLM agents · Agent SDK · Files API · Prompt engineering · Selenium</p></div>
 </div>
 </section>
 </main>
@@ -193,3 +203,5 @@ try{localStorage.setItem(k,n)}catch(e){}
 </script>
 </body>
 </html>
+
+</body></html>
